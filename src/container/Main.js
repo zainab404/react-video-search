@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import SearchBar from './SearchBar';
 import axios from 'axios';
-import VideoItem from '../presentational/VideoItem';
 import VideoList from '../presentational/VideoList';
+import VideoDetail from '../presentational/VideoDetail';
 
 const Main = () => {
   // STATE INSTANTIATION
@@ -23,16 +23,20 @@ const Main = () => {
     setVideoResults(response.data.items)
   };
 
-  const onVideoSelect = () => {
-    console.log("video has been selected")
+  const onVideoSelect = (videoElement) => {
+    setSelectedVideo(videoElement.id.videoId);
   }
-
+  
   return (
     <div>
       <SearchBar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
       onSearchSubmit={onSearchSubmit}
+    />
+    
+    <VideoDetail
+      selectedVideo={selectedVideo}
     />
 
     <VideoList
