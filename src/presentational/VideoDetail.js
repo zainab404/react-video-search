@@ -1,13 +1,16 @@
 const VideoDetail = ({selectedVideo}) => {
 
   if(!selectedVideo) {
-    return <h1>Search to display Video</h1>
+    return null
   }
   const videoSrc = `https://www.youtube.com/embed/${selectedVideo}`
 
   return (
-    <iframe title="video display" src={videoSrc}/>
-  ) 
+    <div id="video-detail" className="flex justify-center">
+      <iframe className="object-cover h-52 w-500" title="video display" src={videoSrc}/>
+    </div>
+    
+  )
 }
 
 export default VideoDetail;

@@ -1,18 +1,15 @@
 const VideoItem = ({videoElement, onVideoSelect}) => {
   return (
-    <div 
-      onClick={() => onVideoSelect(videoElement)}
-      className="m-16 flex justify-end" id="video-element"
-    >
-      <div className="cursor-pointer bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-        <div className="px-4 py-5 sm:px-6">
-          {videoElement.snippet.title}
-            <div className="px-4 py-5 sm:p-6">
-              <img src={videoElement.snippet.thumbnails.default.url} alt={videoElement.snippet.title}></img>
-          </div>
-        </div>
-      </div>
-  </div>  
+    <div id="row" className="w-48">
+      <ul className=" m-8 divide-y divide-gray-200">
+        <li onClick={() => onVideoSelect(videoElement)} className="py-6 cursor-pointer">
+            <img src={videoElement.snippet.thumbnails.default.url} alt={videoElement.snippet.title}></img>
+              <div className="ml-3">
+                <p className=" w-48 text-sm font-medium text-gray-900">{videoElement.snippet.title}</p>
+            </div>
+          </li>
+      </ul>
+    </div>
   )
 }
 export default VideoItem;

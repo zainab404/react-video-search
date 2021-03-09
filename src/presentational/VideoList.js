@@ -11,7 +11,7 @@ const VideoList = ({videoResults, onVideoSelect}) => {
     )
   })
   return (
-    <div className="">
+    <div>
       {renderedVideos}
     </div>
   )

@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import axios from 'axios';
 import VideoList from '../presentational/VideoList';
 import VideoDetail from '../presentational/VideoDetail';
+import Heading from '../presentational/Heading';
 
 const Main = () => {
   // STATE INSTANTIATION
@@ -29,6 +30,11 @@ const Main = () => {
   
   return (
     <div>
+      <div>
+        <Heading/>
+      </div>
+      
+
       <SearchBar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
