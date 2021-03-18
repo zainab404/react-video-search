@@ -11,6 +11,7 @@ const Main = () => {
   const [videoResults, setVideoResults] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  //HELPER FUNCTIONS
   const onSearchSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
@@ -27,13 +28,12 @@ const Main = () => {
   const onVideoSelect = (videoElement) => {
     setSelectedVideo(videoElement.id.videoId);
   }
-  
+
   return (
     <div>
       <div>
         <Heading/>
       </div>
-      
 
       <SearchBar
       searchTerm={searchTerm}
@@ -46,8 +46,8 @@ const Main = () => {
     />
 
     <VideoList
-      videoResults={videoResults}
       onVideoSelect={onVideoSelect}
+      videoResults={videoResults}
     />
     </div>
   );
