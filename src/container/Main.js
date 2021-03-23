@@ -18,7 +18,7 @@ const Main = () => {
       params: {
         q: searchTerm,
         type: 'video',
-        key: 'AIzaSyBQazd5isdSH0EbXYxkb0slk4GqeshUQgo',
+        key: '',
         part: 'snippet',
       }
     });
@@ -36,19 +36,19 @@ const Main = () => {
       </div>
 
       <SearchBar
-      searchTerm={searchTerm}
-      setSearchTerm={setSearchTerm}
-      onSearchSubmit={onSearchSubmit}
-    />
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onSearchSubmit={onSearchSubmit}
+      />
     
-    <VideoDetail
-      selectedVideo={selectedVideo}
-    />
+      <VideoDetail
+        selectedVideo={selectedVideo}
+      />
 
-    <VideoList
-      onVideoSelect={onVideoSelect}
-      videoResults={videoResults}
-    />
+      <VideoList
+        onVideoSelect={onVideoSelect}
+        videoResults={videoResults}
+      />
     </div>
   );
 };
