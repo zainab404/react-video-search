@@ -32,7 +32,7 @@ const Main = () => {
   return (
     <div>
       <div>
-        <Heading/>
+        <Heading />
       </div>
 
       <SearchBar
